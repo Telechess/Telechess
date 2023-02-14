@@ -21,3 +21,11 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
 `
 
 setupCounter(document.querySelector<HTMLButtonElement>('#counter')!)
+
+
+async function testServerConnection() {
+  const response = await fetch("http://localhost:5173/test")
+  return response.status == 200
+}
+
+testServerConnection();
