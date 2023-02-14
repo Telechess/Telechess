@@ -5,7 +5,7 @@
   "dfghgukyfjhdtgftype": "module",
   "scripts": {
     "front": "vite",
-    "back": "nodemon -w back backend/server.ts",
+    "back": "nodemon -w back backend/index.ts",
     "build": "tsc && vite build",
     "preview": "vite preview"
   },
