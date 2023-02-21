@@ -30,15 +30,16 @@ function onDragStart (source, piece, position, orientation) {
 
 function onDrop (source, target) {
   // see if the move is legal
-  var move = game.move({
-    from: source,
-    to: target,
-    promotion: 'q' // NOTE: always promote to a queen for example simplicity
-  })
-
-  // illegal move
-  if (move === null) return 'snapback'
-
+  try {
+    var move = game.move({
+      from: source,
+      to: target,
+      promotion: 'q' // NOTE: always promote to a queen for example simplicity
+    }) 
+  } catch(e:any) {
+    // invalid move
+    return 'snapback'
+  }
   updateStatus()
 }
 
